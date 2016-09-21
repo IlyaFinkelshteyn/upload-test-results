@@ -3,7 +3,7 @@ build: off
 test_script:
 - ps: $wc = New-Object 'System.Net.WebClient'
 
-- ps: $wc.UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\nunitlite-different-time-format-result.xml))
+- ps: $wc.UploadFile("http://appveyor.local/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\nunitlite-different-time-format-result.xml))
 - ps: $wc.UploadFile("http://appveyor.local/api/testresults/xunit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\xunit-result.xml))
 - ps: $wc.UploadFile("http://appveyor.local/api/testresults/xunit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\xunit20-result.xml))
 - ps: $wc.UploadFile("http://appveyor.local/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\nunit-result.xml))
